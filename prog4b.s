@@ -1,0 +1,18 @@
+	AREA PROG4B, CODE, READONLY
+ENTRY
+	MOV R1, #0 ; t1
+	MOV R2, #1 ; t2
+	MOV R3, #10 ; n
+	MOV R4, #0x40000000
+	STRB R1, [R4], #1
+	STRB R2, [R4], #1
+LOOP
+	ADD R5, R1, R2 ; t3 = t1 + t2
+	STRB R5, [R4], #1 ; store t3
+	MOV R1, R2
+	MOV R2, R5
+	SUB R3, R3, #1
+	CMP R3, #2
+	BNE LOOP
+G B G
+	END ; 0x40000000, 0x4000FFFF

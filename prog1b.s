@@ -1,0 +1,7 @@
+	AREA PROG1B, CODE, READONLY
+	
+ENTRY
+	MOV R1, #1
+	MOV R2, #2
+	MOV R3, #0
+	

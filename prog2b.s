@@ -1,0 +1,14 @@
+	AREA PROG2B, CODE, READONLY
+
+ENTRY
+	MOV R1, #1 ; starting value
+	MOV R2, #2 ; common ratio
+	MOV R3, #10 ;n
+	MOV R4, #0x40000000
+LOOP
+	MUL R1, R2, R1
+	STR R1, [R4], #4
+	SUBS R3, #1
+	BNE LOOP
+G B G
+	END
